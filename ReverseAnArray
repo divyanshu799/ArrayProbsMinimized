@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int main() {
+int i;
+int arr[]={72,30,22,89,111};
+int n= sizeof(arr)/sizeof(arr[0]);
+for(i=n-1;i>=0;i--)
+{
+ //Reversed Array is
+    cout<<arr[i]<<endl;
+}
+}
