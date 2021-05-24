@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int i,j;
+   float max,min;
+   float arr[]={5,10,15};
+   int n=sizeof(arr)/sizeof(arr[0]);
+   min=arr[0];
+   max=arr[1];
+   for(i=0;i<n;i++)
+   {
+       for(j=i;j<n;j++)
+       if (min>arr[i])
+       min=arr[i];
+       else if (max<arr[i])
+       max=arr[i];
+   }
+   cout<<"Maximum No. :"<<endl;
+   cout<<max<<endl;
+   cout<<"Minimum No. :"<<endl;
+   cout<<min<<endl;
+float range=max-min;
+cout<<"Range is: ";
+cout<<range<<endl;
+float coefficient={range/(max+min)};
+cout<<"Coefficient is: ";
+cout<<coefficient;
+
+    return 0;
+}
