@@ -23,3 +23,42 @@ int main() {
        }
 return 0;
 }
+
+
+//Method 2
+
+#include<iostream>
+using namespace std;
+int main() {
+     int first, second, third;
+     int i,x;
+    int arr[]={10, 4, 3, 50, 23, 90};
+       int n = sizeof(arr) / sizeof(arr[0]);
+  first = second = third = 0;
+  for(int i = 0; i < n; i++)
+    {
+            if (arr[i] > first)
+      {
+
+          third = second;
+          second = first;
+          first = arr[i]   ;
+       }
+            else if (arr[i] > second)
+      {
+          third = second;
+          second = arr[i];
+      }
+              else if (arr[i] > third)
+      {
+          third = arr[i]; 
+      }
+
+}
+
+cout << "Three largest elements are "
+        << first << " " << second << " "
+        << third << endl;
+return 0;
+}
+
