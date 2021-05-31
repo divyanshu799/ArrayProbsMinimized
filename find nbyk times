@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int arr[]={3, 1, 2, 2, 1, 2, 3, 3};
+  int i,j;
+  int n = sizeof(arr)/sizeof(arr[0]);
+  int k=4;
+  for(i=0;i<n;i++){
+      int count=1;
+      for(j=i+1;j<n;j++){
+          if(arr[i]==arr[j])
+          count++;
+          if(count>(n/k)){
+           cout<<arr[i]<<",";
+           break;
+          }
+      }
+      
+  }
+return 0;
+}
