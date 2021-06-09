@@ -1,0 +1,22 @@
+#include <iostream>
+
+using namespace std;
+
+int GCD(int l,int r){
+    while(r){
+        return GCD(r,l%r);
+    }
+    return l;
+}
+int main()
+{
+    int arr[] = {2, 3, 60, 90, 50};
+    int a=2;
+    int b=4;
+    int rsl=arr[a];
+    for(int i=a+1;i<=b;i++){
+        rsl=GCD(rsl,arr[i]);
+    }
+    cout<<"GCD Of given range "<<rsl;
+    return 0;
+}
