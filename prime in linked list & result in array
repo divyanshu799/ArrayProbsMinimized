@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+// Node of the singly linked list
+struct Node {
+    int data;
+    Node* next;
+};
+ 
+// Function to insert a node at the beginning
+// of the singly Linked List
+void push(Node** head_ref, int new_data)
+{
+    Node* new_node = new Node;
+    new_node->data = new_data;
+    new_node->next = (*head_ref);
+    (*head_ref) = new_node;
+}
+ 
+// Function to check if a number is prime
+bool isPrime(int n)
+{
+    // Corner cases
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+ 
+    // This is checked so that we can skip
+    // middle five numbers in below loop
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+ 
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+ 
+    return true;
+}
+//function to print the array
+void printarr(int a[], int n)
+{   
+    int m=sizeof(a)/sizeof(a[0]);
+    for (int i = 0; i < m; i++)
+        cout << a[i] << " ";
+        
+}
+// Function to find count of prime
+// nodes in a linked list
+int countPrime(Node** head_ref)
+{
+    int count = 0;
+    Node* ptr = *head_ref;
+     int index=0;
+    int n=5; int arr[n];
+    while (ptr != NULL) {
+        // If current node is prime
+        if (isPrime(ptr->data)) {
+            // Update count
+            count++;
+            arr[index++]=ptr->data;
+            
+        }
+        ptr = ptr->next;
+        
+    }
+    printarr(arr,index);
+    return 0;
+}
+ 
+int main()
+{
+   
+    Node* head = NULL;
+ 
+    push(&head, 17);
+    push(&head, 10);
+    push(&head, 6);
+    push(&head, 5);
+    push(&head, 15);
+ 
+    // Function call to print require answer
+    cout << "The prime nodes in Linked List = ";
+    countPrime(&head);
+         
+ 
+    return 0;
+}
